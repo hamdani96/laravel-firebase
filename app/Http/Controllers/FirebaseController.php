@@ -60,4 +60,19 @@ class FirebaseController extends Controller
         $ref = $this->database->getReference('hewan/karnivora')->getValue();
         dump($ref);
     }
+
+    public function update()
+    {
+        // before
+        $ref = $this->database->getReference('hewan/herbivora/jerapah')->getValue();
+        dump($ref);
+
+        // update data
+        $ref = $this->database->getReference('hewan/herbivora/jerapah')
+        ->update(["kategori" => "pemarah"]);
+
+        // after
+        $ref = $this->database->getReference('hewan/herbivora/jerapah')->getValue();
+        dump($ref);
+    }
 }

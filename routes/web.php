@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('create', [FirebaseController::class, 'set']);
 Route::get('read', [FirebaseController::class, 'read']);
+Route::get('update', [FirebaseController::class, 'update']);
