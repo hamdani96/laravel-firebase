@@ -44,6 +44,10 @@ class FirebaseController extends Controller
                 "sifat" => "baik",
                 "kategori" => "jinak"
             ],
+            "koala" => [
+                "sifat" => "pemalu",
+                "kategori" => "jinak",
+            ]
         ]);
 
         // after
@@ -73,6 +77,13 @@ class FirebaseController extends Controller
 
         // after
         $ref = $this->database->getReference('hewan/herbivora/jerapah')->getValue();
+        dump($ref);
+    }
+
+    public function delete()
+    {
+        $ref = $this->database->getReference('hewan/herbivora/jerapah')->set(null);
+
         dump($ref);
     }
 }

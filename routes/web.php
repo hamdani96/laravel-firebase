@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FirebaseController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,6 @@ Route::get('/', function () {
 Route::get('create', [FirebaseController::class, 'set']);
 Route::get('read', [FirebaseController::class, 'read']);
 Route::get('update', [FirebaseController::class, 'update']);
+Route::get('delete', [FirebaseController::class, 'delete']);
+
+Route::get('user', [HomeController::class, 'getUser'])->name('user');
